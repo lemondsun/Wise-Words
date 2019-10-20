@@ -10,21 +10,21 @@ import { getAnswers } from "./services/api-helper";
 class App extends React.Component {
   state = {
     answer: "",
-    question: ""
+    userQuestion: ""
   };
 
-  componentDidMount = async () => {
-    const answer = await getAnswers();
-    this.setState({
-      answer
-    });
-  };
+  // componentDidMount = async () => {
+  //   const answer = await getAnswers(this.state.userQuestion);
+  //   this.setState({
+  //     answer
+  //   });
+  // };
 
   render() {
     return (
       <div className="App">
         <Header />
-        <SearchArea answer={this.state.answer} />
+        <SearchArea />
         <BackGround />
         <Footer />
       </div>
