@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Header = (props) => {
+const Header = () => {
   return (
-    <div>
-      <h1>HOME</h1>
+    <div id="home-link">
+    <Link to ="/"  >Home</Link>
     </div>
   )
 }
