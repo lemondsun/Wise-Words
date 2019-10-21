@@ -18,9 +18,9 @@ export const getAnswers = async userQuestion => {
 
 export const readAnswer = async (answer) => {
   let apiKey = '	b1dc733a7f9d423abd17e41787a63188';
-  let params = `${answer}`;
+  
   // let theAnswer = qs.stringify(params);
-  let response = await axios.get(`http://api.voicerss.org/?key=${apiKey}&hl=en-us&src=${params}`)
+  let response = await axios.get(`http://api.voicerss.org/?key=${apiKey}&hl=en-us&src=${answer}`)
   let audio = response.config.url
   return audio
 }

@@ -43,8 +43,8 @@ class App extends React.Component {
       userQuestion
     });
   };
-  playAnswer = async () => {
-    let audio = await new Audio(readAnswer(this.state.answer))
+  playSound =(sounds) => {
+    let audio = new Audio(sounds)
     audio.type = 'audio/mp3';
     var playPromise = audio.play();
 
@@ -55,10 +55,14 @@ class App extends React.Component {
           console.log('Failed to play....' + error);
       });
   }
-    this.setState({
-      playAnswer:audio
-    })
-
+    
+    
+  }
+  opnChange = async () => {
+    
+    const sounds = await readAnswer(this.state.answer)
+    this.playSound(sounds)
+   
   }
   render() {
     return (
@@ -67,12 +71,12 @@ class App extends React.Component {
 
         <BackGround />
         <div>
-          <Route path="/loading" render={() => <iframe src="https://giphy.com/embed/u2Prjtt7QYD0A" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>} />
+          <Route path="/loading" render={() => <iframe src="https://giphy.com/embed/u2Prjtt7QYD0A" width="480" height="360" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>} />
           <Route
             path="/answer"
             render={props =>
               <AnswerPage answer={this.state.answer}
-                playAnswer={this.state.playAnswer}
+                play={this.componentDidMount}
               />}
           />
           <Route
