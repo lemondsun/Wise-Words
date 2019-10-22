@@ -1,5 +1,6 @@
 import axios from "axios";
 import qs from "query-string";
+// import VoiceRSSWebApi from './voice-rss-api';
 
 export const getAnswers = async userQuestion => {
   try {
@@ -16,14 +17,41 @@ export const getAnswers = async userQuestion => {
   }
 };
 
-export const readAnswer = async (answer) => {
-  let apiKey = '	b1dc733a7f9d423abd17e41787a63188';
+// const VoiceRSS = new VoiceRSSWebApi();
+// VoiceRSS.setApiKey('b1dc733a7f9d423abd17e41787a63188');
+
+// export const read = async () => {
+//   const audio = await VoiceRSS.getAudio('Hello World');
   
-  // let theAnswer = qs.stringify(params);
-  let response = await axios.get(`http://api.voicerss.org/?key=${apiKey}&hl=en-us&src=${answer}`)
-  let audio = response.config.url
-  return audio
-}
+//   // play the audio
+//   new Audio(audio).play();
+  
+//   // OR console log the audio (base64 encoding)
+//   console.log(audio);
+// };
+// export const readAnswer = async () => {
+//   const VoiceRSS = new VoiceRSSWebApi();
+//   VoiceRSS.setApiKey('b1dc733a7f9d423abd17e41787a63188');
+//   const audio = await VoiceRSS.getAudio('Hello World');
+//   new Audio(audio).play();
+// }
+
+
+
+
+
+
+
+
+
+// export const readAnswer = async (answer) => {
+//   let apiKey = 'b1dc733a7f9d423abd17e41787a63188';
+  
+//   // let theAnswer = qs.stringify(params);
+//   let response = await axios.get(`http://api.voicerss.org/?key=${apiKey}&hl=en-us&src=${answer}`)
+//   let audio = response.config.url
+//   return audio
+// }
 
 // export const
 // export const readAnswers = async () => {
