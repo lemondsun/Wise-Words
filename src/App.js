@@ -8,20 +8,16 @@ import SearchArea from "./components/SearchArea";
 import { getAnswers } from "./services/api-helper";
 import AnswerPage from "./components/AnswerPage";
 
+
+
 class App extends React.Component {
-  images= [
-    "https://i.imgur.com/vZWrypo.jpg",
-    "https://i.imgur.com/HiJpqJH.jpg",
-    "https://i.imgur.com/17mvQjd.jpg"
-  ]
+ 
   state = {
     answer: "",
     userQuestion: "",
     errorMessage: "",
-    image: "https://i.imgur.com/HiJpqJH.jpg"
-   
   };
-
+  
   handleSubmit = async event => {
     event.preventDefault();
     this.props.history.push("/loading");
@@ -30,7 +26,7 @@ class App extends React.Component {
       this.setState({
         errorMessage: answer.error
       });
-      this.props.history.push("/");
+      this.props.history.push("/answer");
     } else {
       console.log(this.state.userQuestion);
       this.setState({
@@ -60,31 +56,34 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-
-        <BackGround image={this.state.image}/>
         <div>
+        
+          <BackGround />
           <Route path="/loading" render={() => "Thinking..." } />
           <Route
             path="/answer"
             render={props =>
               <AnswerPage answer={this.state.answer}
-                
+                errorMessage={this.state.errorMessage}
               />}
           />
           <Route
             exact
             path="/"
             render={props => (
+              
               <SearchArea
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
-                
               />
+                
+              
             )}
           />
-          <div id="middle">
-            <h5 id="error-message">{this.state.errorMessage}</h5>
-            </div>
+          
+            
+          
+          
         </div>
         <Footer />
       </div>
