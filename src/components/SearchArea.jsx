@@ -10,7 +10,7 @@ const SearchArea = props => {
           placeholder="Any Questions"
           onChange={props.handleChange}>
         </input>
-        <input type="submit" value="submit" />
+        <input className="submit" type="submit" value="submit" />
       </form>
     </div>
   );
