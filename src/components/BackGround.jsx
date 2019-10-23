@@ -28,7 +28,8 @@ const BackGround = (props) => {
             />
           )
           }
-          />
+        />
+        
       </div>
     </div>
   )

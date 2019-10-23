@@ -23,7 +23,7 @@
 }
 
 #footer{
-  height: 50px;
+  height: 70px;
   text-align: center;
   background: black;
   color: white;
@@ -78,12 +78,20 @@ background-color: rgb(173,224,248);
   background-color: blue;
 } */
 
-@media only scree and (max-width: 375px) {
+@media only screen and (min-width: 375px) {
   #footer {
-    height: 50px;
+    height: 150px;
+  }
+  #question-section h1 {
+    font-size: 45px;
   }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 360px) {
+  #question-section h1 {
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 768px) {
   
   #footer {
      height: 150px;

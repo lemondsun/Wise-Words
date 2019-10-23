@@ -45,7 +45,6 @@ class App extends React.Component {
     });
   };
   
-  
  
  
    
@@ -62,6 +61,8 @@ class App extends React.Component {
           answer={this.state.answer}
           errorMessage={this.state.errorMessage}
         />
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        
         <Footer />
       </div>
     );
