@@ -1,12 +1,11 @@
 import React from "react";
 import "./App.css";
-import { Route, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import BackGround from "./components/BackGround";
-import SearchArea from "./components/SearchArea";
 import { getAnswers } from "./services/api-helper";
-import AnswerPage from "./components/AnswerPage";
+
 
 
 
@@ -56,35 +55,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <div>
-        
-          <BackGround />
-          <Route path="/loading" render={() => "Thinking..." } />
-          <Route
-            path="/answer"
-            render={props =>
-              <AnswerPage answer={this.state.answer}
-                errorMessage={this.state.errorMessage}
-              />}
-          />
-          <Route
-            exact
-            path="/"
-            render={props => (
-              
-              <SearchArea
-                handleChange={this.handleChange}
-                handleSubmit={this.handleSubmit}
-              />
-                
-              
-            )}
-          />
-          
-            
-          
-          
-        </div>
+        <BackGround
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          userQuestion={this.state.userQuestion}
+          answer={this.state.answer}
+          errorMessage={this.state.errorMessage}
+        />
         <Footer />
       </div>
     );

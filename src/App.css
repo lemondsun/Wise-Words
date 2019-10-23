@@ -1,7 +1,6 @@
 #home-link {
   padding-top: 20px;
   text-align: center;
-  
   color:white;
   background: black;
   height: 50px;
@@ -9,7 +8,11 @@
   font-family: 'Alfa Slab One', cursive;
 }
 #background {
-  width: 100%;
+ min-height: 85vh;
+ background-image: url('https://media.giphy.com/media/UoeNRHjpKOYmH6rf9Y/giphy.gif');
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
 }
 #error-message{
   background-color:black;
@@ -18,9 +21,7 @@
   padding: 16px 32px;
   font-family: 'Source Sans Pro', sans-serif;
 }
-#background:hover {
-  opacity: 0.4;
-}
+
 #footer{
   height: 50px;
   text-align: center;
@@ -35,37 +36,52 @@
 #printed-answer {
   font-family: 'Source Sans Pro', sans-serif;
 }
-#question-section {
+#text-display {
   padding: 20px;
   text-align: center;
+  height: 300px;
   width: 50%;
   position: fixed;
   left: 63%;
   margin-left: -37.5%;
-  top: 40vh;
-  background-color: rgba(255, 255, 255, 0.9);
+  top: 30vh;
+  background-color: rgba(255, 255, 255, 0.99);
+  border: 10px solid black;
   border-radius: 5px;
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 #question-section h1 {
-  margin: 0px;
+  margin: 50px 0px 0px 0px;
   text-shadow: 2px 2px white;
   font-family: 'Alfa Slab One', cursive;
 }
 #question-section input {
-  width: auto;
-}
-#answer-box {
-  text-align: center;
-  width: 50%;
-  position: fixed;
-  left: 63%;
-  margin-left: -37.5%;
-  top: 40vh;
-  background-color: rgba(255, 255, 255, .8);
-  border-radius: 5px;
+  width: 80%;
+  border: 1px solid black;
+  height:30px;
   box-sizing: border-box;
-  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+#question-section input[type='sumbit'] {
+  width: 20%;
+  padding-left: 0;
+  background-color: blue;
+}
+@media only scree and (max-width: 375px) {
+  #footer {
+    height: 50px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  
+  #footer {
+     height: 150px;
+    }
+  #footer p {
+    padding-top: 50px;
+  }
+  
 }

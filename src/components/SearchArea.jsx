@@ -7,7 +7,7 @@ const SearchArea = props => {
         <h1>ASK HERE</h1>
         <input
           type="text"
-          placeholder="Ask here"
+          placeholder="Any Questions"
           onChange={props.handleChange}>
         </input>
         <input type="submit" value="submit" />

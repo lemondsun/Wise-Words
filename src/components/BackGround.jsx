@@ -1,8 +1,35 @@
 import React from 'react';
+import { Route } from 'react-router-dom'
+import AnswerPage from './AnswerPage';
+import SearchArea from './SearchArea';
+
 const BackGround = (props) => {
   return (
-    <div >
-    <img id='background'src='https://media.giphy.com/media/UoeNRHjpKOYmH6rf9Y/giphy.gif'/>
+    <div id="background">
+      <div id="text-display">
+        <Route path="/loading" render={() => 
+          "thinking..."
+        } />
+        <Route
+          path="/answer"
+          render={() =>
+            <AnswerPage answer={props.answer}
+          
+              errorMessage={props.errorMessage}
+            />}
+        />
+        <Route 
+          exact 
+          path="/"
+          render={() => (
+            <SearchArea
+              handleChange={props.handleChange}
+              handleSubmit={props.handleSubmit}
+            />
+          )
+          }
+          />
+      </div>
     </div>
   )
 }
